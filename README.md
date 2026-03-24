@@ -1,0 +1,20 @@
+# FastAPI Beyond CRUD 🚀
+
+Hey! Welcome to my **FastAPI Beyond CRUD** project. I'm building this to go deeper into FastAPI and build some cool stuff beyond the basics.
+
+## What's new?
+I just added a new dynamic endpoint to greet users! It takes a name as a path parameter and sends back a nice little JSON greeting.
+
+Here is the endpoint I added:
+```python
+@app.get("/greet/{name}")
+async def greet(name: str) -> dict:
+    return {"message": f"Hello {name}"}
+```
+
+## Testing with Restfox 🦊
+To make sure everything is working perfectly, I spun up the local dev server (`fastapi dev main.py`) and gave the new endpoint a quick test using **Restfox**. 
+
+As you can see below, hitting `http://127.0.0.1:8000/greet/Bernice` works like a charm! ✨
+
+![Testing with Restfox](./images/restfox-test.png)
