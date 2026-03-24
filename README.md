@@ -18,3 +18,13 @@ To make sure everything is working perfectly, I spun up the local dev server (`f
 As you can see below, hitting `http://127.0.0.1:8000/greet/Bernice` works like a charm! ✨
 
 ![Testing with Restfox](./images/restfox-test.png)
+
+## Creating a Book
+I've also built a `POST /create_book` endpoint that accepts Pydantic `BaseModel` data (title, author, year). 
+
+![Create Book Test](./images/create-book.png)
+
+## Fetching Custom Headers
+And finally, a `/get_headers` endpoint that grabs request headers and returns them with a `207 Multi-Status` response!
+
+![Get Headers Test](./images/get-headers.png)
