@@ -1,6 +1,6 @@
 # FastAPI Beyond CRUD 🚀
 
-Hey! Welcome to my **FastAPI Beyond CRUD** project. I'm building this to go deeper into FastAPI and build some cool stuff beyond the basics.
+Hey! Welcome to my **FastAPI Beyond CRUD** project. I'm building this by following a youtube tutorial to go deeper into FastAPI and build some cool stuff beyond the basics.
 
 ## What's new?
 I just added a new dynamic endpoint to greet users! It takes a name as a path parameter and sends back a nice little JSON greeting.
