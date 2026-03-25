@@ -32,5 +32,8 @@ And finally, a `/get_headers` endpoint that grabs request headers and returns th
 ## Book Management API
 - `GET /books`: Lists all current books.
 - `POST /books`: Creates a new book using Pydantic models (`201 Created`).
+- `GET /books/{book_id}`: Retrieves a specific book by its ID.
+- `PATCH /books/{book_id}`: Partially updates a book's information.
+- `DELETE /books/{book_id}`: Deletes a book from the system.
 
 ![Books API Tests](./images/books-test.png)
