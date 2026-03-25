@@ -4,34 +4,70 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-@app.get("/")
-async def read_root():
-    return {"message": "Welcome to FastAPI"}
+books = [ 
+    {
+        "id": 1,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "publisher": "Scribner",
+        "published_date": "1925-04-10",
+        "page_count" : 1234,
+        "language": "English"
+    },
+    {
+        "id": 2,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "publisher": "J. B. Lippincott & Co.",
+        "published_date": "1960-07-11",
+        "page_count" : 281,
+        "language": "English"
+    },
+    {
+        "id": 3,
+        "title": "Ruthless People",
+        "author": "J.J McAvoy",
+        "publisher": "J.J McAvoy",
+        "published_date": "2015-05-10",
+        "page_count" : 328,
+        "language": "English"
+    },
+    {
+        "id": 4,
+        "title": "The Catcher in the Rye",
+        "author": "J. D. Salinger",
+        "publisher": "Little, Brown and Company",
+        "published_date": "1951-07-16",
+        "page_count" : 277,
+        "language": "English"
+    },
+    {
+        "id": 5,
+        "title": "Handsome Devil",
+        "author": "L.J Shen",
+        "publisher": "L.J Shen",
+        "published_date": "2016-05-10",
+        "page_count" : 300,
+        "language": "English"
+    }
+]
 
-@app.get("/greet")
-async def greet(name: Optional[str] = "User", age: int = 0) -> dict:
-    return {"message": f"Hello {name}", "age":age}
+@app.get("/books")
+async def get_all_books():
+    return books
 
-class BookCreateModel(BaseModel):
-    title: str
-    author: str
-    year: int
+@app.post("/books")
+async def create_a_book() -> dict:
+    pass
 
-@app.post("/create_book")
-async def create_book(book_data: BookCreateModel): 
-    return {"title": book_data.title, "author": book_data.author, "year": book_data.year}
+@app.get("/books/{book_id}")
+async def get_a_book(book_id: int) -> dict:
+    pass
 
+@app.put("/books/{book_id}")
+async def update_a_book(book_id: int) -> dict:
+    pass
 
-@app.get("/get_headers", status_code=207)
-async def get_headers(
-    accept:str = Header(None),
-    content_type:str = Header(None),
-    user_agent: str = Header(None),
-    host: str = Header(None)
-):
-    request_headers = {}
-    request_headers["Accept"] = accept
-    request_headers["Content-Type"] = content_type
-    request_headers["User-Agent"] = user_agent
-    request_headers["Host"] = host
-    return request_headers
+@app.delete("/books/{book_id}")
+async def delete_a_book(book_id: int) -> dict:
+    pass
