@@ -28,3 +28,9 @@ I've also built a `POST /create_book` endpoint that accepts Pydantic `BaseModel`
 And finally, a `/get_headers` endpoint that grabs request headers and returns them with a `207 Multi-Status` response!
 
 ![Get Headers Test](./images/get-headers.png)
+
+## Book Management API
+- `GET /books`: Lists all current books.
+- `POST /books`: Creates a new book using Pydantic models (`201 Created`).
+
+![Books API Tests](./images/books-test.png)
